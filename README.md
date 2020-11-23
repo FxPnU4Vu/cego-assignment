@@ -1,6 +1,20 @@
-## Usage
-
+## Script usage
 ```
+./cegoassignment.php [OPTIONS]...
+
+      --help                  Print this help message
+      --query="<SQL query>"   Accepts query input like "SELECT * FROM database;"
+      --output="FILE"         Location of local CSV file to be written
+      --includeheader         Include csv header
+      --delete                Delete retrieved rows in database, used with --output
+      --verify                Used with --output and --delete to verify filecontent before deletion
+```
+Example:
+```
+./cegoassignment.php --query="SELECT * FROM users ORDER BY firstname LIMIT 5" --output="output.csv" --includeheader --delete --verify
+```
+This will output 5 rows as CSV to out.csv and remove the rows from the database after checking that the correct data is saved to the file.
+
 
 
 
