@@ -1,13 +1,9 @@
 ## Quick start
 Assuming you are on a blank machine, make sure these dependencies are installed:
-
-php7.4-cli
-
-php7.4-mysql
-
-docker
-
-docker-compose
+ - php7.4-cli
+ - php7.4-mysql
+ - docker
+ - docker-compose
 
 and run:
 ```
@@ -34,7 +30,7 @@ Example:
 ./cegoassignment.php --query="SELECT * FROM users ORDER BY firstname LIMIT 5" --output="output.csv" --includeheader --delete --verify
 ```
 This will output 5 rows as CSV to out.csv and remove the rows from the database after checking that the correct data is saved to the file.
-
+Make sure that you have write permissions to the output folder/file.
 
 
 
