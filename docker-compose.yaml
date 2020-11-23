@@ -7,7 +7,7 @@ networks:
 services:
   mariadb:
     container_name: cegomariadb
-    image: mariadb:latest
+    image: mariadb:10.5.8-focal
     restart: always
     ports:
       - 3306:3306
@@ -21,7 +21,7 @@ services:
 
   adminer:
     container_name: cegoadminer
-    image: adminer:latest
+    image: adminer:4.7.7-standalone
     restart: always
     depends_on:
       - mariadb
