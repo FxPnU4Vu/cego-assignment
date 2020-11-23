@@ -36,9 +36,9 @@ From the script directory, run:
       --delete                Delete retrieved rows in database, used with --output
       --verify                Used with --output and --delete to verify filecontent before deletion
 ```
-Example for running it locally:
+Example for running it locally, from the script directory:
 ```
-./cegoassignment.php --query="SELECT * FROM users ORDER BY firstname LIMIT 5" --output="script/output.csv" --includeheader --delete --verify
+./cegoassignment.php --query="SELECT * FROM users ORDER BY firstname LIMIT 5" --output="output.csv" --includeheader --delete --verify
 ```
 
 Example for running it through docker:
