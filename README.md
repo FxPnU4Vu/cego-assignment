@@ -1,3 +1,40 @@
+## Quick start
+Assuming you are on a blank machine, make sure these dependencies are installed:
+ - php7.4-cli
+ - php7.4-mysql
+ - docker
+ - docker-compose
+
+and run:
+```
+sudo docker-compose up -d
+```
+to start the mariadb databaseserver and Adminer for database management.
+
+mariadb's port 3306 (sql) and Adminer's port 80 (http) is exposed to the host.
+
+## Script usage
+From the script directory, run:
+```
+./cegoassignment.php [OPTIONS]...
+
+      --help                  Print this help message
+      --query="<SQL query>"   Accepts query input like "SELECT * FROM table;"
+      --output="FILE"         Location of local CSV file to be written
+      --includeheader         Include csv header
+      --delete                Delete retrieved rows in database, used with --output
+      --verify                Used with --output and --delete to verify filecontent before deletion
+```
+Example:
+```
+./cegoassignment.php --query="SELECT * FROM users ORDER BY firstname LIMIT 5" --output="output.csv" --includeheader --delete --verify
+```
+This will output 5 rows as CSV to out.csv and remove the rows from the database after checking that the correct data is saved to the file.
+Make sure that you have write permissions to the output folder/file.
+
+---
+---
+
 # Job interview assignment
 We kindly ask you to solve the task below. By solving and submitting this assignment you provide us with insights in how you solve real-world problems. What we will be looking at are topics such as: choice of technology, structuring of code, use of VCS, selection of 3rd party libraries, documentation etc.
 
