@@ -1,4 +1,24 @@
+## Quick start
+Assuming you are on a blank machine, make sure these dependencies are installed:
+
+php7.4-cli
+
+php7.4-mysql
+
+docker
+
+docker-compose
+
+and run:
+```
+sudo docker-compose up -d
+```
+to start the mariadb databaseserver and Adminer for database management.
+
+Adminer's port 80 (http) is exposed to the host.
+
 ## Script usage
+From the script directory, run:
 ```
 ./cegoassignment.php [OPTIONS]...
 
