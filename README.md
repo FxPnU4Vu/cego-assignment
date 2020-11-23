@@ -1,17 +1,19 @@
 ## Quick start
 Assuming you are on a blank machine, make sure these dependencies are installed:
- - php7.4-cli
- - php7.4-mysql
  - docker
  - docker-compose
+ 
+ (and these, if you choose to run the script locally and not in container)
+ - php7.4-cli
+ - php7.4-mysql
 
 and run:
 ```
 sudo docker-compose up -d
 ```
-to start the mariadb databaseserver and Adminer for database management.
+to start the mariadb databaseserver, Adminer for database management and build the docker image with the script.
 
-mariadb's port 3306 (sql) and Adminer's port 80 (http) is exposed to the host.
+mariadb's port 3306 (sql) and Adminer's port 80 (http) is exposed to the host. mariadb's port is exposed to be able to run the script locally.
 
 Connect using these credentials:
 ```
@@ -19,6 +21,8 @@ user: root
 password: cegopassword
 database: cegodatabase
 ```
+
+The script can be run directly from the host machine, or through docker.
 
 ## Script usage
 From the script directory, run:
@@ -32,11 +36,17 @@ From the script directory, run:
       --delete                Delete retrieved rows in database, used with --output
       --verify                Used with --output and --delete to verify filecontent before deletion
 ```
-Example:
+Example for running it locally:
 ```
-./cegoassignment.php --query="SELECT * FROM users ORDER BY firstname LIMIT 5" --output="output.csv" --includeheader --delete --verify
+./cegoassignment.php --query="SELECT * FROM users ORDER BY firstname LIMIT 5" --output="script/output.csv" --includeheader --delete --verify
 ```
-This will output 5 rows as CSV to out.csv and remove the rows from the database after checking that the correct data is saved to the file.
+
+Example for running it through docker:
+```
+docker run --network cegonetwork -it --rm -v $(pwd)/script:/script/output cegoscript --query="SELECT * FROM users LIMIT 1" --output=/script/output/output.csv --includeheader --delete --verify
+```
+
+Both will output 5 rows as CSV to output.csv and remove the rows from the database after checking that the correct data is saved to the file.
 Make sure that you have write permissions to the output folder/file.
 
 ---
