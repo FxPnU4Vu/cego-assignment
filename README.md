@@ -13,6 +13,13 @@ to start the mariadb databaseserver and Adminer for database management.
 
 mariadb's port 3306 (sql) and Adminer's port 80 (http) is exposed to the host.
 
+Connect using these credentials:
+```
+user: root
+password: cegopassword
+database: cegodatabase
+```
+
 ## Script usage
 From the script directory, run:
 ```
