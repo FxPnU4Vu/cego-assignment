@@ -1,6 +1,7 @@
 version: '3.8'
 networks:
   cegonetwork:
+    name: cegonetwork
     driver: bridge
 
 services:
