@@ -31,7 +31,7 @@ if (in_array("--help",$argv)) {
     fwrite(STDOUT,"Usage: ./cegoassignment.php [OPTIONS]...".PHP_EOL);
     fwrite(STDOUT,PHP_EOL);
     fwrite(STDOUT,"      --help                  Print this help message".PHP_EOL);
-    fwrite(STDOUT,"      --query=\"<SQL query>\"   Accepts query input like \"SELECT * FROM database;\"".PHP_EOL);
+    fwrite(STDOUT,"      --query=\"<SQL query>\"   Accepts query input like \"SELECT * FROM table;\"".PHP_EOL);
     fwrite(STDOUT,"      --output=\"FILE\"         Location of local CSV file to be written".PHP_EOL);
     fwrite(STDOUT,"      --includeheader         Include csv header".PHP_EOL);
     fwrite(STDOUT,"      --delete                Delete retrieved rows in database, used with --output".PHP_EOL);
