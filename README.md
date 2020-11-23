@@ -19,7 +19,7 @@ From the script directory, run:
 ./cegoassignment.php [OPTIONS]...
 
       --help                  Print this help message
-      --query="<SQL query>"   Accepts query input like "SELECT * FROM database;"
+      --query="<SQL query>"   Accepts query input like "SELECT * FROM table;"
       --output="FILE"         Location of local CSV file to be written
       --includeheader         Include csv header
       --delete                Delete retrieved rows in database, used with --output
