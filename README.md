@@ -11,7 +11,7 @@ sudo docker-compose up -d
 ```
 to start the mariadb databaseserver and Adminer for database management.
 
-Adminer's port 80 (http) is exposed to the host.
+mariadb's port 3306 (sql) and Adminer's port 80 (http) is exposed to the host.
 
 ## Script usage
 From the script directory, run:
