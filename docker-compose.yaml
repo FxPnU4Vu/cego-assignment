@@ -1,0 +1,31 @@
+version: '3.8'
+networks:
+  cegonetwork:
+    driver: bridge
+
+services:
+  mariadb:
+    container_name: cegomariadb
+    image: mariadb:latest
+    restart: always
+    volumes:
+      - ./sqldump:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: cegopassword
+      MYSQL_DATABASE: cegodatabase
+    networks:
+      - cegonetwork
+
+  adminer:
+    container_name: cegoadminer
+    image: adminer:latest
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+      - 80:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: cegomariadb
+      ADMINER_DEFAULT_USER: root
+    networks:
+      - cegonetwork
