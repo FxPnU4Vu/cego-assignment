@@ -43,7 +43,7 @@ Example for running it locally:
 
 Example for running it through docker:
 ```
-docker run --network cegonetwork -it --rm -v $(pwd)/script:/script/output cegoscript --query="SELECT * FROM users LIMIT 1" --output=/script/output/output.csv --includeheader --delete --verify
+docker run --network cegonetwork -it --rm -v $(pwd)/script:/script/output cegoscript --query="SELECT * FROM users ORDER BY firstname LIMIT 5" --output=/script/output/output.csv --includeheader --delete --verify
 ```
 
 Both will output 5 rows as CSV to output.csv and remove the rows from the database after checking that the correct data is saved to the file.
